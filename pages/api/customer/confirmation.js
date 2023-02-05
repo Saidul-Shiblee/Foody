@@ -1,7 +1,7 @@
-import apiHandler from "../../utils/api/api-handler";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 import { buffer } from "micro";
-import { findOrderAndUpdate } from "../../services/db/orderServices";
+import { findOrderAndUpdate } from "../../../services/db/orderServices";
+import apiHandler from "../../../utils/api/api-handler";
 
 const confirmation = async (req, res) => {
   const endpointSecret = process.env.WEBHOOK_SECRET_KEY;

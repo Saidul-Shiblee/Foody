@@ -1,6 +1,6 @@
 import Head from "next/head";
 import About from "../components/About";
-import Chef from "../components/chef";
+import Chef from "../components/Chef";
 import Hero from "../components/Hero";
 import Products from "../components/Products";
 import { Reservation } from "../components/Reservation";

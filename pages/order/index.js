@@ -1,6 +1,6 @@
 import { getSession } from "next-auth/react";
 import React from "react";
-import OrderCard from "../../components/orderCard";
+import OrderCard from "../../components/OrderCard";
 import OrderLoader from "../../components/OrderLoader";
 
 const Order = ({ productList }) => {
