@@ -107,7 +107,7 @@ const Navbar = () => {
         <ul className="flex  gap-14 justify-center items-center w-full">
           <li className=" ">
             <Link
-              href={"#hero"}
+              href={"/#hero"}
               className="block  before:text-center relative top-0 left-0  text-base cursor-pointer before:content-['Home'] before:absolute
             before:text-[#FF6347] before:top-0 before:left-0 before:w-0
             before:overflow-hidden before:transition-all before:ease-in-out
@@ -118,7 +118,7 @@ const Navbar = () => {
           </li>
           <li className="cursor-pointer">
             <Link
-              href={"#menu"}
+              href={"/#menu"}
               className="block  before:text-center relative top-0 left-0  text-base cursor-pointer before:content-['Menu'] before:absolute
             before:text-[#FF6347] before:top-0 before:left-0 before:w-0
             before:overflow-hidden before:transition-all before:ease-in-out
@@ -129,7 +129,7 @@ const Navbar = () => {
           </li>
           <li className="   cursor-pointer">
             <Link
-              href={"#footer"}
+              href={"/#footer"}
               className="block  before:text-center relative top-0 left-0  text-base cursor-pointer before:content-['Contact\00a0Us'] before:absolute
             before:text-[#FF6347] before:top-0 before:left-0 before:w-0
             before:overflow-hidden before:transition-all before:ease-in-out
@@ -150,7 +150,7 @@ const Navbar = () => {
           </li>
           <li className="   cursor-pointer">
             <Link
-              href={"#about-us"}
+              href={"/#about-us"}
               className="block  before:text-center relative top-0 left-0  text-base cursor-pointer before:content-['About\00a0Us'] before:absolute
             before:text-[#FF6347] before:top-0 before:left-0 before:w-0
             before:overflow-hidden before:transition-all before:ease-in-out

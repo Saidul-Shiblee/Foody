@@ -17,7 +17,6 @@ const getOrders = async (req, res) => {
     const session = await findSession({
       userId: id,
     });
-
     if (session && session.expires >= new Date()) {
       const orders = await findOrders({
         customerId: id,

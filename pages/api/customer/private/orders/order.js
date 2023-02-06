@@ -5,7 +5,6 @@ import apiHandler from "../../../../../utils/api/api-handler";
 
 const getOrder = async (req, res) => {
   const { userId, productId } = req.body;
-  console.log("User ID:" + userId, "Product ID:" + productId);
   if (userId && productId) {
     const session = await findSession({
       userId: userId,

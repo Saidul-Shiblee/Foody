@@ -13,7 +13,7 @@ const Order = ({ productList }) => {
   if (!loading) {
     return (
       <div className="p-10 mt-20 flex gap-8 flex-wrap justify-center">
-        {productList?.orders.map((order) => (
+        {productList?.orders?.map((order) => (
           <OrderCard key={order._id} order={order} />
         ))}
       </div>
