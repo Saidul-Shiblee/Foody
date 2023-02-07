@@ -31,7 +31,7 @@ export async function getServerSideProps(context) {
   const { req } = context;
   const session = await getSession({ req });
   const res = await fetch(
-    `https://foody-saidul-shiblee.vercel.app/api/customer/private/orders/${session?.user?.id}`,
+    `https://rococo-moxie-3c4519.netlify.app/api/customer/private/orders/${session?.user?.id}`,
     {
       withCredentials: true,
       headers: {

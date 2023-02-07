@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 
 const fetchData = async (req, userID, id) => {
   const result = await fetch(
-    `https://foody-saidul-shiblee.vercel.app/api/customer/private/orders/order`,
+    `https://rococo-moxie-3c4519.netlify.app/api/customer/private/orders/order`,
     {
       method: "POST",
       headers: {

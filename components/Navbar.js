@@ -46,7 +46,7 @@ const Navbar = () => {
     const nabBarTransparent = "bg-gradient-transparent shadow-lg ";
     let navBarSolid;
 
-    if (currentLocation === "https://foody-saidul-shiblee.vercel.app/") {
+    if (currentLocation === "https://rococo-moxie-3c4519.netlify.app/") {
       navBarSolid = "bg-transparent";
     } else {
       navBarSolid = "bg-gradient-solid";
