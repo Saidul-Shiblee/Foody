@@ -4,6 +4,11 @@ const nextConfig = {
     CLOUDINARY_NAME: "dvxrxaens",
     CLOUDINARY_API_KEY: "311732954488955",
   },
+  experimental: {
+    externalDir: true,
+  },
+  // Potential new config flag:
+  disableExperimentalFeaturesWarning: true,
   reactStrictMode: true,
   swcMinify: true,
   images: {

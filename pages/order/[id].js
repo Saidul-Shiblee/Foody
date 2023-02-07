@@ -7,12 +7,10 @@ import deliveredImage from "../../public/images/delivered.png";
 import { getSession } from "next-auth/react";
 import { ORDER_STATUS } from "../../lib/constant";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import { cookies } from "next/headers";
 
 const fetchData = async (req, userID, id) => {
   const result = await fetch(
-    "http://localhost:3000/api/customer/private/orders/order",
+    `https://foody-saidul-shiblee.vercel.app/api/customer/private/orders/order`,
     {
       method: "POST",
       headers: {

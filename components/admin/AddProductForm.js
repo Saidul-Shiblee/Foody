@@ -164,7 +164,7 @@ function AddProducForm({
   const upload = async (e) => {
     e.preventDefault();
     try {
-      const res = await axiosPrivate.post("api/admin/signature", {
+      const res = await axiosPrivate.post("/api/admin/signature", {
         folder: "foody/products",
       });
       const data = new FormData();

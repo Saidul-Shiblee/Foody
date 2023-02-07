@@ -27,8 +27,9 @@ const Dashboard = () => {
   const [skip, setSkip] = React.useState(true);
   const auth = useSelector(getAuth);
   const { data, isLoading, error } = useGetDashboardInfoQuery(undefined, {
-    pollingInterval: 50000000,
+    pollingInterval: 5000,
   });
+  console.log(data);
 
   const {
     data: notifications,
@@ -202,7 +203,7 @@ const Dashboard = () => {
           </div>
         </div>
         {isLoading && <Loader />}
-        {!isLoading && !data && error && <P>Something went wrong</P>}
+        {!isLoading && !data && error && <p>Something went wrong</p>}
         {!isLoading && !error && data && (
           <div className="flex w-full justify-between relative px-10 gap-4">
             <div class=" justify-center w-1/4 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 flex  items-center gap-10">

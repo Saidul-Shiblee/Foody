@@ -16,7 +16,7 @@ export const CheckoutFormBody = ({ children, ...props }) => {
     if (values.paymentoption === "Stripe Payment") {
       const res = await axios({
         method: "post",
-        url: "http://localhost:3000/api/customer/private/checkout ",
+        url: "https://foody-saidul-shiblee.vercel.app/api/customer/private/checkout ",
         data: {
           ordertDetails: cartItems,
           customerDetails: values,

@@ -6,7 +6,6 @@ import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import clientPromise from "../../../lib/mongoDB";
 import dbConnect from "../../../lib/monogConnect";
 import { findAccount } from "../../../services/db/accountsService";
-import { findUser, findUserAndUpdate } from "../../../services/db/userServices";
 
 export const authOptions = {
   providers: [
@@ -31,9 +30,9 @@ export const authOptions = {
       const foundAccount = await findAccount({
         providerAccountId: account?.providerAccountId,
       });
-      console.log(foundAccount);
+
       const provider = { ...foundAccount }?._doc?.provider;
-      console.log({ ...foundAccount }?._doc?.userId);
+
       if (foundAccount && provider !== account.provider) {
         throw new Error(
           `You are not allowed to sign in with ${account.provider},try with ${provider}`
@@ -49,6 +48,7 @@ export const authOptions = {
       if (session?.user) {
         session.user.id = user.id;
       }
+
       return session;
     },
   },

@@ -8,13 +8,8 @@ const baseQuery = fetchBaseQuery({
   prepareHeaders: (headers, { getState, endpoint }) => {
     const token = getState()?.auth?.accessToken;
     if (token && !headers.has("Authorization")) {
-      console.log("endpoint:", endpoint);
       headers.set("Authorization", `Bearer ${token}`);
     }
-    if (endpoint === "/api/auth/refresh") {
-      console.log("first");
-    }
-
     return headers;
   },
 });

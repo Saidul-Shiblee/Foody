@@ -21,11 +21,12 @@ const Product = () => {
   const [item, setItem] = React.useState({});
   const [loading, setLoading] = React.useState(true);
   const cartItems = useSelector(getItems);
+
   React.useEffect(() => {
     const getPost = async () => {
       setLoading(true);
       const res = await fetch(
-        `http://localhost:3000/api/customer/private/products/${router.query.id}`
+        `https://foody-saidul-shiblee.vercel.app/api/customer/private/products/${router.query.id}`
       );
       const data = await res.json();
       setLoading(false);

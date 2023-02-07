@@ -22,7 +22,9 @@ const Home = ({ productList }) => {
 };
 
 export async function getServerSideProps(context) {
-  const res = await fetch("http://localhost:3000/api/customer/public/products");
+  const res = await fetch(
+    "https://foody-saidul-shiblee.vercel.app/api/customer/public/products"
+  );
   const data = await res.json();
 
   return {

@@ -24,7 +24,7 @@ const Navbar = () => {
   } else {
     currentLocation = null;
   }
-  const dispatch = useDispatch();
+
   const totalNoOfOrder = useSelector(getTotalNoOfOrder);
   const cartItems = useSelector(getItems);
   const { data: session, status } = useSession();
@@ -46,7 +46,7 @@ const Navbar = () => {
     const nabBarTransparent = "bg-gradient-transparent shadow-lg ";
     let navBarSolid;
 
-    if (currentLocation === "http://localhost:3000/") {
+    if (currentLocation === "https://foody-saidul-shiblee.vercel.app/") {
       navBarSolid = "bg-transparent";
     } else {
       navBarSolid = "bg-gradient-solid";

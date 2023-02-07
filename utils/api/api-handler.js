@@ -1,6 +1,6 @@
 import errorHandler from "./error-handler";
 import dbConnect from "../../lib/monogConnect";
-import logger from "../../services/logger/logger";
+// import logger from "../../services/logger/logger";
 import jwtMiddleware from "./jwt-middleware";
 import apiGaurd from "../apiGaurd";
 import verifyToken from "../verifyToken";
@@ -15,7 +15,7 @@ export default function apiHandler(handler) {
       const db = await dbConnect();
 
       // route handler
-      logger.info(`Method:${req.method} URL:${req.url} `);
+      // logger.info(`Method:${req.method} URL:${req.url} `);
       //function to secure customer api
       await apiGaurd(req, res);
       //function to verify jwt
@@ -31,7 +31,7 @@ export default function apiHandler(handler) {
       // }
     } catch (err) {
       // global error handler
-      logger.error(err.stack);
+      // logger.error(err.stack);
       errorHandler(err, res);
     }
   };

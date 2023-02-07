@@ -8,12 +8,11 @@ const confirmation = async (req, res) => {
   const payload = await buffer(req);
   const sig = req.headers["stripe-signature"];
   const event = stripe.webhooks.constructEvent(payload, sig, endpointSecret);
-
+  console.log(event);
   if (event.type === "checkout.session.completed") {
     if (event?.type === "checkout.session.completed") {
       const metadata = event.data?.object?.metadata;
       const paymentStatus = event.data?.object?.payment_status;
-      console.log(paymentStatus);
       if (metadata?.orderId && paymentStatus === "paid") {
         await findOrderAndUpdate(metadata.orderId, { paymentStatus: true });
       }
@@ -26,8 +25,8 @@ export default apiHandler({
   post: confirmation,
 });
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+// export const config = {
+//   api: {
+//     bodyParser: false,
+//   },
+// };

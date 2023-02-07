@@ -4,7 +4,6 @@ export const ordersApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getOrders: builder.query({
       query: () => "/api/admin/orders",
-      keepUnusedDataFor: 5,
       providesTags: "orders",
     }),
   }),

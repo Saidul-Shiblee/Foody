@@ -1,10 +1,10 @@
 import createHttpError from "http-errors";
-import { findNotifications } from "../../../../services/db/notificationServices";
-import { findOrders } from "../../../../services/db/orderServices";
-import { findProducts } from "../../../../services/db/productServices";
-import { findUsers } from "../../../../services/db/userServices";
-import apiHandler from "../../../../utils/api/api-handler";
-import httpStatusCodes from "../../../../utils/httpStatusCode";
+import { findNotifications } from "../../../services/db/notificationServices";
+import { findOrders } from "../../../services/db/orderServices";
+import { findProducts } from "../../../services/db/productServices";
+import { findUsers } from "../../../services/db/userServices";
+import apiHandler from "../../../utils/api/api-handler";
+import httpStatusCodes from "../../../utils/httpStatusCode";
 
 const getDashboardInfo = async (req, res) => {
   const role = req.userRole;
