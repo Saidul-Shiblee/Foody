@@ -1,27 +1,61 @@
-# Next.js + Tailwind CSS Example
+Check out the live version of Foody at https://myrestaurant-saidul-shiblee.vercel.app/. You can add food to your cart and checkout with Stripe payment. To place an order, you need to log in first. You can sign up with either your Google or Github account.
+Use the following test card number for Stripe: 4242 4242 4242 4242.
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+You can also visit the admin panel at https://myrestaurant-saidul-shiblee.vercel.app/admin with the following credentials:
 
-## Deploy your own
+email: testAdmin@gmail.com
+password: Test@123
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+# Introduction
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+**Foody**-An online restaurant app bootstrapped with **_<span style={color:red}>NEXT.JS </span>_**
 
-## How to use
+# 🎯 Purpose of the Project
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+The salient purpose of this project is learning. While building this app i tried to have a firm grasp on below topics:
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
+1. NEXT.JS,Next Auth,JWT,Payment Gateway Integration<br />
+2. RTK Query,AXIOS <br />
+3. MonogDB. <br />
+4. Cloudinary. <br />
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+# ⛲ Features
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+## 💻 Features:
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+This is a full fledged E-commerce website with following features
+
+### Customer Features:
+
+Log in with Google or Github<br />
+Add item to cart<br />
+Order food<br />
+Make payments through Stripe<br />
+Track your orders in real-time<br />
+
+### Admin Features:
+
+Admin can monitor everything from dashboard<br />
+Realtime notification <br />
+Create New Menu with picture <br />
+Edit Menu <br />
+Delete Menu <br />
+Change the Status of Order<br />
+Delete Order <br />
+Admin can create new User with picture <br />
+Admin can edit existing user <br />
+Admin can Delete existing user <br />
+User can Change password<br />
+
+# 🧰 Technologies Used:
+
+## 📱 Technologies:
+
+Full Stack Framework:Next.js<br/>
+Styling :Tailwind CSS<br/>
+Authentication:Next Auth,JWT<br/>
+Payment Gateway:Stripe <br/>
+Data Fetching Tool:RTK Query,Axios <br/>
+Database: MongoDB.<br/>
+Cloud Service:Cloudinary<br/>
+IDE & Version Controlling: VS Code & Git <br/>
