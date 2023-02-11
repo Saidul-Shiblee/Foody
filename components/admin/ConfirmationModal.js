@@ -1,7 +1,6 @@
-import React from "react";
-import usePrivateAxios from "../../hooks/usePrivateAxios";
+import React, { useEffect } from "react";
 import { useDeleteImageMutation } from "../../services/redux/features/imageApiSlice";
-
+import notify from "../../lib/toastNotification";
 const ConfirmationModal = ({
   open,
   handleModal,
@@ -16,16 +15,16 @@ const ConfirmationModal = ({
     handleModal();
   };
   const handleDelete = async () => {
-    try {
-      const res = await deleteFunction(id);
-
-      if (publicId) {
-        let response = await deleteImage(publicId);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-    handleModal();
+    deleteFunction(id)
+      .unwrap()
+      .then((payload) => notify(payload.message, "success"))
+      .then(() => {
+        if (publicId) {
+          deleteImage(publicId);
+        }
+      })
+      .catch((err) => notify(err.data.message, "error"))
+      .finally(handleModal());
   };
   return open ? (
     <div

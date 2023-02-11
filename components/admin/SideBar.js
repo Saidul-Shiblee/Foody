@@ -25,7 +25,7 @@ const SideBar = () => {
 
       <ul className="flex flex-col items-center gap-10 mt-6">
         <li className="hover:text-gray-50 cursor-pointer">
-          <Link href="/admin/dashboard">Dashboard</Link>
+          <Link href="/admin/">Dashboard</Link>
         </li>
         <li className="hover:text-gray-50 cursor-pointer">
           <Link href="/admin/products">Products</Link>

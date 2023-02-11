@@ -30,10 +30,10 @@ const login = async (req, res) => {
         user: others,
       });
     } else {
-      res.status(401).json("Invalid Credential");
+      res.status(401).json({ message: "Invalid Credential" });
     }
   } else {
-    res.status(401).json("Invalid Credential");
+    res.status(401).json({ message: "Invalid Credential" });
   }
 };
 

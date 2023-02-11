@@ -23,7 +23,7 @@ const Home = ({ productList }) => {
 
 export async function getServerSideProps(context) {
   const res = await fetch(
-    "https://rococo-moxie-3c4519.netlify.app/api/customer/public/products"
+    "https://myrestaurant-saidul-shiblee.vercel.app/api/customer/public/products"
   );
   const data = await res.json();
 

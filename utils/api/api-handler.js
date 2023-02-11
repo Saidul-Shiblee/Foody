@@ -32,6 +32,7 @@ export default function apiHandler(handler) {
     } catch (err) {
       // global error handler
       // logger.error(err.stack);
+      console.log(err);
       errorHandler(err, res);
     }
   };

@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   env: {
     CLOUDINARY_NAME: "dvxrxaens",
     CLOUDINARY_API_KEY: "311732954488955",
@@ -19,20 +19,4 @@ const nextConfig = {
       "res.cloudinary.com",
     ],
   },
-  // webpack: (config, { isServer }) => {
-  //   if (!isServer) {
-  //     // don't resolve 'fs' module on the client to prevent this error on build --> Error: Can't resolve 'fs'
-  //     config.resolve = {
-  //       ...config.resolve,
-  //       fallback: {
-  //         ...config.resolve.fallback,
-  //         fs: false,
-  //       },
-  //     };
-  //   }
-
-  //   return config;
-  // },
 };
-
-module.exports = nextConfig;

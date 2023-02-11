@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 
 const fetchData = async (req, userID, id) => {
   const result = await fetch(
-    `https://rococo-moxie-3c4519.netlify.app/api/customer/private/orders/order`,
+    `https://myrestaurant-saidul-shiblee.vercel.app/api/customer/private/orders/order`,
     {
       method: "POST",
       headers: {
@@ -44,12 +44,10 @@ const Order = ({ data }) => {
         );
         // Update the state with the new data
         setOrder(newData.order);
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     }
     // Fetch the data every 5 seconds
-    interval = setInterval(getOrderDetails, 60000);
+    interval = setInterval(getOrderDetails, 5000);
 
     return () => clearInterval(interval);
   }, [order.status]);

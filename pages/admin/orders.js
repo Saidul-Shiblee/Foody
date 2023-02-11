@@ -1,74 +1,37 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import ConfirmationModal from "../../components/admin/ConfirmationModal";
 import LayoutAdmin from "../../components/LayoutAdmin";
-import { useDispatch } from "react-redux";
-import { signOut } from "../../services/redux/features/authSlice";
-import usePrivateAxios from "../../hooks/usePrivateAxios";
 import hasSpace from "../../lib/hasSpace";
-import loadingImage from "../../public/images/loading.gif";
-import Image from "next/image";
 import Loader from "../../components/admin/Loader";
+import {
+  useDeleteOrderMutation,
+  useEditOrderMutation,
+  useGetOrdersQuery,
+} from "../../services/redux/features/orderApiSlice";
+import notify from "../../lib/toastNotification";
 
 const Orders = () => {
   const [confirmationModal, setConfirmationModal] = useState(false);
-  const [orders, setOrders] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [details, setDetails] = useState(null);
-  const dispatch = useDispatch();
-  const axiosPrivate = usePrivateAxios();
-
-  useEffect(() => {
-    const getOrders = async () => {
-      try {
-        setLoading(true);
-        const result = await axiosPrivate.get("api/admin/orders");
-        setLoading(false);
-        setOrders(result.data.orders);
-      } catch (error) {
-        console.log(error);
-        if (error.response.status === 401) {
-          dispatch(signOut());
-        }
-      }
-    };
-    getOrders();
-  }, []);
-
+  const { data: orders, error, isLoading } = useGetOrdersQuery();
+  const [editOrder, {}] = useEditOrderMutation();
+  const [delelteOrder, { error: deleteError }] = useDeleteOrderMutation();
   const changeStatus = async (id, status) => {
-    try {
-      const res = await axiosPrivate.put(`api/admin/orders/${id}`, {
-        status: status + 1,
-      });
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-      if (error.response.status === 401) {
-        dispatch(signOut({}));
-      }
-    }
-  };
-
-  const deleteOrder = async (id, status) => {
-    try {
-      const res = await axiosPrivate.delete(`api/admin/orders/${id}`, {
-        status: status,
-      });
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-      if (error.response.status === 401) {
-        dispatch(signOut({}));
-      }
-    }
+    editOrder({ data: { status: status + 1 }, orderID: id })
+      .unwrap()
+      .then((payload) => notify("Order Status Changed Successfully", "success"))
+      .catch((err) => notify(err.data.message, "error", "top-right"));
   };
 
   const handleConfirmationModal = () => {
     setConfirmationModal(!confirmationModal);
   };
+
   return (
     <>
-      {loading && <Loader />}
-      {!loading && orders && (
+      {isLoading && !error && !orders && <Loader />}
+      {!isLoading && error && !orders && <p>Something went wrong</p>}
+      {!isLoading && !error && orders?.orders && (
         <div className="absolute ml-[230px] w-[calc(100vw_-_250px)] h-full  text-white flex flex-col">
           <div className="w-full flex justify-center  px-2 py-6">
             <p className="px-2 py-1 text-slate-600 text-2xl font-semibold">
@@ -90,7 +53,7 @@ const Orders = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-dotted">
-                {orders.map((el) => {
+                {orders?.orders.map((el) => {
                   return (
                     <tr className="relative flex justify-around  w-full  py-1 px-1">
                       <td className="w-[12%]  flex justify-center items-center ">
@@ -170,13 +133,10 @@ const Orders = () => {
       )}
 
       <ConfirmationModal
-        data={orders}
-        setData={setOrders}
         id={details?.id}
-        setDetails={setDetails}
         open={confirmationModal}
         handleModal={handleConfirmationModal}
-        path="admin/orders"
+        deleteFunction={delelteOrder}
         message="Are you sure you want to delete this order?"
       />
     </>

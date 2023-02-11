@@ -26,8 +26,9 @@ const Products = () => {
   };
   return (
     <>
-      {isLoading && <Loader />}
-      {!isLoading && products?.products && (
+      {isLoading && !products && !error && <Loader />}
+      {!isLoading && !products && error && <p>Something went wrong</p>}
+      {!isLoading && !error && products?.products && (
         <div className="absolute ml-[230px] w-[calc(100vw_-_248px)] flex flex-col h-full  text-white">
           <div className=" w-full flex justify-end px-2 py-6">
             <a

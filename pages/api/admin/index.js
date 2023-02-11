@@ -31,10 +31,7 @@ const getDashboardInfo = async (req, res) => {
         createdAt.getMonth(),
         createdAt.getDate()
       );
-      if (
-        createdAtStart.getTime() === todateStart.getTime() &&
-        cV.paymentStatus === true
-      ) {
+      if (createdAtStart.getTime() === todateStart.getTime()) {
         return pV + cV.orderPrice;
       }
       return pV;

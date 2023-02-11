@@ -1,12 +1,4 @@
-// import { productSchema } from "../../../yup_schema/products";
 import apiHandler from "../../../../utils/api/api-handler";
-// import validateRequest from "../../../utils/api/yup-validator";
-// import {
-//   createProduct,
-//   findProducts,
-// } from "../../../services/db/productServices";
-
-//@TODO validate request
 import stripe from "stripe";
 import { createOrder } from "../../../../services/db/orderServices";
 import { createNotification } from "../../../../services/db/notificationServices";

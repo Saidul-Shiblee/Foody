@@ -26,7 +26,7 @@ const Product = () => {
     const getPost = async () => {
       setLoading(true);
       const res = await fetch(
-        `https://rococo-moxie-3c4519.netlify.app/api/customer/private/products/${router.query.id}`
+        `https://myrestaurant-saidul-shiblee.vercel.app/api/customer/private/products/${router.query.id}`
       );
       const data = await res.json();
       setLoading(false);

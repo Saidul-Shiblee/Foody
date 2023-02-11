@@ -14,15 +14,19 @@ export const CheckoutFormBody = ({ children, ...props }) => {
   }
   const handleOrder = async (values) => {
     if (values.paymentoption === "Stripe Payment") {
-      const res = await axios({
-        method: "post",
-        url: "https://rococo-moxie-3c4519.netlify.app/api/customer/private/checkout ",
-        data: {
-          ordertDetails: cartItems,
-          customerDetails: values,
-        },
-      });
-      window.location.href = res.data;
+      try {
+        const res = await axios({
+          method: "post",
+          url: "https://myrestaurant-saidul-shiblee.vercel.app/api/customer/private/checkout",
+          data: {
+            ordertDetails: cartItems,
+            customerDetails: values,
+          },
+        });
+        window.location.href = res.data;
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
   return (
