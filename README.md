@@ -12,12 +12,7 @@ password: Test@123
 
 # 🎯 Purpose of the Project
 
-The salient purpose of this project is learning. While building this app i tried to have a firm grasp on below topics:
-
-1. NEXT.JS,Next Auth,JWT,Payment Gateway Integration<br />
-2. RTK Query,AXIOS <br />
-3. MonogDB. <br />
-4. Cloudinary. <br />
+I have developed this app with the aim of launching my own online restaurant.
 
 # ⛲ Features
 
