@@ -1,7 +1,7 @@
-Check out the live version of Foody at https://myrestaurant-saidul-shiblee.vercel.app/. You can add food to your cart and checkout with Stripe payment. To place an order, you need to log in first. You can sign up with either your Google or Github account.
+Check out the live version of Foody at https://storied-kringle-7d90e7.netlify.app/ You can add food to your cart and checkout with Stripe payment. To place an order, you need to log in first. You can sign up with either your Google or Github account.
 Use the following test card number for Stripe: 4242 4242 4242 4242.
 
-You can also visit the admin panel at https://myrestaurant-saidul-shiblee.vercel.app/admin with the following credentials:
+You can also visit the admin panel at https://storied-kringle-7d90e7.netlify.app/admin with the following credentials:
 
 email: testAdmin@gmail.com
 password: Test@123
