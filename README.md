@@ -1,7 +1,7 @@
-Check out the live version of Foody at https://myrestaurant-saidul-shiblee.vercel.app/. You can add food to your cart and checkout with Stripe payment. To place an order, you need to log in first. You can sign up with either your Google or Github account.
+Check out the live version of Foody at https://storied-kringle-7d90e7.netlify.app/. You can add food to your cart and checkout with Stripe payment. To place an order, you need to log in first. You can sign up with either your Google or Github account.
 Use the following test card number for Stripe: 4242 4242 4242 4242.
 
-You can also visit the admin panel at https://myrestaurant-saidul-shiblee.vercel.app/admin with the following credentials:
+You can also visit the admin panel at https://storied-kringle-7d90e7.netlify.app/admin with the following credentials:
 
 email: testAdmin@gmail.com
 password: Test@123
@@ -12,12 +12,7 @@ password: Test@123
 
 # 🎯 Purpose of the Project
 
-The salient purpose of this project is learning. While building this app i tried to have a firm grasp on below topics:
-
-1. NEXT.JS,Next Auth,JWT,Payment Gateway Integration<br />
-2. RTK Query,AXIOS <br />
-3. MonogDB. <br />
-4. Cloudinary. <br />
+I have developed this app with the aim of launching my own online restaurant.
 
 # ⛲ Features
 
